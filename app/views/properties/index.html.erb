@@ -19,7 +19,7 @@
   </div>
   <div id="properties" class="min-w-full">
     <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <table class="mt-2 w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
               <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
                 All your properties you have created!!
@@ -44,6 +44,9 @@
                     </th>
                     <th scope="col" class="py-3 px-6">
                         Bath rooms
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Last updated
                     </th>
                     <th scope="col" class="py-3 px-6">
                         <span class="sr-only">View</span>
@@ -76,7 +79,10 @@
                       <td class="py-4 px-6">
                         <%= property.bathrooms %>
                       </td>
-                      <td class="py-4 px-6 text-right">
+                      <td class="py-4 px-6">
+                        <%= time_ago_in_words(property.created_at) %>
+                      </td>
+                      <td class="py-4 px-2 text-center">
                         <%= link_to "Show", property, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
                         <%= link_to "Edit", edit_property_path(property), class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
                       </td>
@@ -91,6 +97,10 @@
               
             </tbody>
         </table>
+        <div class="flex justify-end items-end p-2">
+          <%= paginate @properties %>
+        </div>
+
     </div>
 
   </div>

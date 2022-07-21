@@ -55,6 +55,7 @@ gem "kaminari"
 gem 'carrierwave', '~> 2.0'
 gem 'fog', '~> 1.38'
 gem "mini_magick"
+gem 'kaminari'
 
 
 group :development, :test do

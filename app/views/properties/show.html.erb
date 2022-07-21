@@ -1,5 +1,5 @@
 <div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
+  <div class="mx-auto py-2">
    
     <% if notice.present? %>
       <div id="alert-2" class="flex p-4 mb-4 bg-green-100 rounded-lg dark:bg-green-200" role="alert">
@@ -16,6 +16,12 @@
     <% end %>
 
     <%= render @property %>
+
+    <% if @property.photo.present? %>
+      <div>
+        <%= image_tag @property.photo.url, class: "object-cover" %> 
+      </div>
+    <% end %>
 
     <%= link_to 'Edit this property', edit_property_path(@property), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">

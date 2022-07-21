@@ -3,6 +3,13 @@
 rails g uploader photo
 ```
 
+#### kaminari
+```
+rails g kaminari:views default
+# custom
+rails g kaminari:views default -e erb
+```
+
 
 ![Screen Shot 2565-07-20 at 17 13 01](https://user-images.githubusercontent.com/10510210/179957841-0f5e16b1-367d-4772-bbc7-8a90f32e0be1.png)
 ![Screen Shot 2565-07-20 at 17 12 22](https://user-images.githubusercontent.com/10510210/179957866-03c73400-7374-4944-836d-7f780c6c1f9b.png)
