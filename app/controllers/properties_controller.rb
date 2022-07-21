@@ -1,10 +1,10 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: %i[ show edit update destroy ]
   before_action :authenticate_account!, only: [:new, :create, :destroy, :edit]
+  before_action :set_property, only: %i[ show edit update destroy ]
 
   # GET /properties or /properties.json
   def index
-    @properties = Property.order(:created_at).page params[:page]
+    @properties = Property.order(id: :desc).page params[:page]
   end
 
   # GET /properties/1 or /properties/1.json

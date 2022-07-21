@@ -4,4 +4,5 @@ class Property < ApplicationRecord
 
   paginates_per 5
 
+  scope :latest, -> { order id: :desc }
 end
